@@ -12,7 +12,7 @@ cmp stdout main.stdout
 # Also check that the binary is reproducible when many imports are involved.
 cp main$exe main_old$exe
 rm main$exe
-garble build -tags buildtag
+garble -literals build -tags buildtag
 bincmp main$exe main_old$exe
 
 go build -tags buildtag
